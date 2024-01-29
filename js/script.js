@@ -21,18 +21,52 @@ time = hour + ':' + minute;
 let price = Distance * 0.21;
 let arrival = Distance / 5;
 
-if (Age <= 17) {
-    price = price - ((price * 20) / 100);
-} else if (Age >= 65) {
-    price = price - ((price * 40) / 100);
+if (!isNaN(Age) && !isNaN(Distance) && (Age > 0 && Age < 100) && (Distance > 0) && Number.isInteger(Age) && Number.isInteger(Distance)) {
+    
+    if (Age <= 17) {
+        price = price - ((price * 20) / 100);
+    } else if (Age >= 65) {
+        price = price - ((price * 40) / 100);
+    }
+
+    document.getElementById("date_of_issue").innerHTML = `Emesso il: ${today} alle ore ${time}`;
+    document.getElementById("sum_info").innerHTML = `Viaggio da ${StartStation} a ${EndStation} il ${today} alle ore ${time}`;
+    document.getElementById("s_station").innerHTML = StartStation;
+    document.getElementById("e_station").innerHTML = EndStation;
+    document.getElementById("passenger_name").innerHTML = PassengerName;
+    document.getElementById("departure_date"). innerHTML = `Partenza: ${dd}/${mm}/${yyyy} alle ${time}`;
+    document.getElementById("arrival_time"). innerHTML = `Minuti all'arrivo: ${arrival}`;
+    document.getElementById('price').innerHTML = `${price.toFixed(2)} €`;
+
+} else {
+
+    let check_Age;
+    let check_Distance;
+
+    if (Object.keys(PassengerName).length === 0 || Object.keys(Age).length === 0 || Object.keys(StartStation).length === 0 || Object.keys(EndStation).length === 0 || Object.keys(Distance).length === 0){
+        document.getElementById("correct-data").style.display = 'none';
+        document.getElementById("wrong_data").style.display = 'block';
+        document.getElementById("message").innerHTML = 'Non hai inserito un valore in uno dei campi richiesti Premi F5 per ricaricare la pagina';
+    }
+
+    if (isNaN(Age) || (Age < 0 && Age > 100) || !Number.isInteger(Age)) {
+       document.getElementById("correct-data").style.display = 'none';
+       document.getElementById("wrong_data").style.display = 'block';
+       document.getElementById("message").innerHTML = 'Hai inserito un età non valida Premi F5 per ricaricare la pagina';
+       check_Age = true;
+    }
+    
+    if (isNaN(Distance) || (Distance < 0) || !Number.isInteger(Distance)) {
+        document.getElementById("correct-data").style.display = 'none';
+        document.getElementById("wrong_data").style.display = 'block';
+        document.getElementById("message").innerHTML = 'Hai inserito una distanza non valida Premi F5 per ricaricare la pagina';
+        check_Distance = true;
+    }
+    
+    if (check_Age && check_Distance) {
+        document.getElementById("correct-data").style.display = 'none';
+        document.getElementById("wrong_data").style.display = 'block';
+        document.getElementById("message").innerHTML = 'Hai inserito un età e una distanza non valida Premi F5 per ricaricare la pagina';
+    }
 }
 
-
-document.getElementById("date_of_issue").innerHTML = `Emesso il: ${today} alle ore ${time}`;
-document.getElementById("sum_info").innerHTML = `Viaggio da ${StartStation} a ${EndStation} il ${today} alle ore ${time}`;
-document.getElementById("s_station").innerHTML = StartStation;
-document.getElementById("e_station").innerHTML = EndStation;
-document.getElementById("passenger_name").innerHTML = PassengerName;
-document.getElementById("departure_date"). innerHTML = `Partenza: ${dd}/${mm}/${yyyy} alle ${time}`;
-document.getElementById("arrival_time"). innerHTML = `Minuti all'arrivo: ${arrival}`;
-document.getElementById('price').innerHTML = `${price.toFixed(2)} €`;

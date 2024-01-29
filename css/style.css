@@ -9,3 +9,12 @@
 .ms_border {
     border: 1px solid black;
 }
+
+#wrong_data {
+    display: none;
+}
+
+h1 {
+    color: red;
+    padding-top: 40vh;
+}
