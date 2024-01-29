@@ -5,3 +5,7 @@
 .logo {
     width: 20vw;
 }
+
+.ms_border {
+    border: 1px solid black;
+}

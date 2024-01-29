@@ -22,7 +22,7 @@
 <body>
 
     <section class="container-md p-2">
-        <div class="d-flex flex-column justify-content-between">
+        <div class="d-flex flex-column justify-content-between vh-100">
             <div>
                 <div class="d-flex justify-content-between mb-4">
                     <img class="logo" src="./img/Trenitalia_logo.svg.png" alt="">
@@ -38,20 +38,62 @@
                 </div>
     
                 <!-- tratta di viaggio -->
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="row text-white fs-4 mb-2">
+                    <div class="col-4 px-4 py-2 bg-success">
+                        <div class="mb-4">Stazione di Partenza</div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="col-4 px-4 py-2 text-black">
+                        <div class="mb-4">Stazione di Arrivo</div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="col-4 px-4 py-2 text-white bg-danger">
+                        <div class="mb-1">Treno: <strong>Frecciarossa</strong></div>
+                        <div class="mb-1">Servizio: <strong>Standard</strong></div>
+                        <div class="mb-1">Carrozza: <strong>1</strong></div>
+                        <div class="mb-1">Posto: <strong>11D</strong></div>
+                    </div>
                 </div>
     
                 <!-- prezzo biglietto -->
-                <div>
-    
+                <div class="text-end fs-4 bg-dark-subtle py-2 mb-4">
+                    Importo Totale: <strong class="price"></strong>
                 </div>
     
                 <!-- dettagli viaggio -->
                 <div>
-    
+                    <h4>DETTAGLIO PASSEGGERI</h4>
+                    <div class="row ms_border">
+                        <div class="col-4 bg-dark-subtle py-2">
+                            Nome passeggero
+                            <div></div>
+                        </div>
+                        <div class="col-8 text-center">
+                            <div class="d-flex justify-content-around px-lg-2 py-2">
+                                <div class="align-self-center">
+                                    Servizio
+                                    <h5>Standard</h5>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="fa-solid fa-train"></i> <br>
+                                    <strong>4</strong>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="fa-solid fa-couch"></i> <br>
+                                    <strong>11D</strong>
+                                </div>
+                                <div class="align-self-center">
+                                    Punti CARTA FRECCIA <br>
+                                    <strong></strong>
+                                </div>
+                                <div>
+                                    <img src="./img/QR_ANDROID.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
