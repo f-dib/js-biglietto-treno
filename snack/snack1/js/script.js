@@ -13,14 +13,20 @@ function temperature() {
     
         if (temperaturec <= 10){
             document.getElementById("background").style.backgroundImage = "url(./img/inverno.jpg)";
+            document.getElementById("background").style.backgroundSize = "cover";
+            document.getElementById("background").style.backgroundPosition = "center";
         }
     
         if (temperaturec > 10 && temperaturec <= 25){
             document.getElementById("background").style.backgroundImage = "url(./img/primavera.jpg)";
+            document.getElementById("background").style.backgroundSize = "cover";
+            document.getElementById("background").style.backgroundPosition = "center";
         }
     
         if (temperaturec > 25){
             document.getElementById("background").style.backgroundImage = "url(./img/sun.jpg)";
+            document.getElementById("background").style.backgroundSize = "cover";
+            document.getElementById("background").style.backgroundPosition = "center";
         }
     
     } else if (isNaN(temperaturec)) {

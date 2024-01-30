@@ -1,3 +1,9 @@
+/* general */
+h1, 
+h2 {
+    text-shadow: 0px 0px 10px white;
+}
+
 /* first snack */
 #background {
     display: none;
@@ -19,6 +25,8 @@
 
 .background2 {
     background-image: url(../img/math.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #wrong2 {
