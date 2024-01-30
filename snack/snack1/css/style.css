@@ -21,7 +21,20 @@
     background-image: url(../img/math.jpg);
 }
 
-
 #wrong2 {
+    display: none;
+}
+
+/* third snack */
+#bg3 {
+    display: none;
+}
+
+#result {
+    width: 50vw;
+    height: 40vh;
+}
+
+#wrong3 {
     display: none;
 }

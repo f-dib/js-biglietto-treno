@@ -56,5 +56,76 @@ function averagemedia() {
     }
 }
 
+function rockPaperScissors() {
+
+    document.getElementById("choose").style.display = 'none';
+    document.getElementById("bg3").style.display = 'block';
+
+    const resultElement = document.getElementById("result");
+    const chioceElement = prompt("Scegli 'carta', 'forbice', 'sasso'");
+    const computerChoice = Math.floor(Math.random() * 3) + 1;
+
+    let computerConversion;
+
+    if(computerChoice == 1) {
+        computerConversion = "carta";
+    } else if (computerChoice == 2) {
+        computerConversion = "forbice";
+    } else {
+        computerConversion = "sasso";
+    }
+
+    let vittoria = false;
+
+
+    if(chioceElement == computerConversion) {
+
+        document.getElementById("title").innerHTML = `Hai scelto ${chioceElement}, il computer ha scelto ${computerConversion}`;
+        document.getElementById("result").style.backgroundImage = "url(./img/pari.png)";
+
+    } else if (!isNaN(chioceElement)) {
+    
+        document.getElementById("correct3").style.display = 'none';
+        document.getElementById("wrong3").style.display = 'block';
+        document.getElementById("message3").innerHTML = 'Non hai inserito un elemento valido Premi F5 per ricaricare la pagina';
+    
+    } else {
+        if(chioceElement == "carta") {
+
+            if(computerConversion == "sasso") {
+                vittoria = true;
+            } else {
+                vittoria = false;
+            }
+        
+        } else if(chioceElement == "sasso") {
+            if(computerConversion == "forbice") {
+                vittoria = true;
+            } else {
+                vittoria = false;
+            }
+        } else {
+            if(computerConversion == "carta") {
+                vittoria = true;
+            } else {
+                vittoria = false;
+            }
+        }
+
+        document.getElementById("title").innerHTML = `Hai scelto ${chioceElement}, il computer ha scelto ${computerConversion}`;
+        if(vittoria) {
+            
+            document.getElementById("result").style.backgroundImage = "url(./img/vittoria.png)";
+        
+        } else {
+            
+            document.getElementById("result").style.backgroundImage = "url(./img/perso.png)";
+            
+        }
+    }
+
+}
+
 document.getElementById("btn1").addEventListener('click', temperature);
 document.getElementById("btn2").addEventListener('click', averagemedia);
+document.getElementById("btn3").addEventListener('click', rockPaperScissors);
