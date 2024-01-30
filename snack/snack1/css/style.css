@@ -1,7 +1,27 @@
+/* first snack */
+#background {
+    display: none;
+}
+
 #wrong {
     display: none;
 }
 
 .error {
     color: red;
+}
+
+
+/* second snack */
+#bg2 {
+    display: none;
+}
+
+.background2 {
+    background-image: url(../img/math.jpg);
+}
+
+
+#wrong2 {
+    display: none;
 }
